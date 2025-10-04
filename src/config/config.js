@@ -1,11 +1,10 @@
 // API Configuration
 export const API_CONFIG = {
   // Base URL for API requests, correctly built as a string
-  API_BASE_URL: process.env.REACT_APP_API_URL,
+  API_BASE_URL: `${process.env.REACT_APP_API_URL}/api`,
+ // Base URL for the socket connection, with correct fallback logic
 
-  // Correctly checks for the socket URL first, then falls back.
-  BASE_URL: process.env.REACT_APP_SOCKET_URL || `${process.env.REACT_APP_API_URL}/api`,
-
+  BASE_URL: `${process.env.REACT_APP_SOCKET_URL}/api` || `${process.env.REACT_APP_API_URL}/api`,
   // Authentication endpoints
   AUTH: {
     LOGIN: '/auth/login',
